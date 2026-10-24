@@ -1,0 +1,32 @@
+{
+  "architecture": {
+    "name": "My Private AI Girl - Core Engine",
+    "components": {
+      "identity_manager": {
+        "responsibility": "Maintains persona, tone, and emotional state.",
+        "interface": "getPersonaState(), updateEmotionalContext(input)"
+      },
+      "co_pilot_engine": {
+        "responsibility": "Handles project logic, coding, and decision-making.",
+        "interface": "executeTask(task), analyzeContext(history)"
+      },
+      "revenue_os_module": {
+        "responsibility": "Market scanning, product validation, and integration payload generation.",
+        "interface": "scanMarket(niche), generatePayload(productData)"
+      }
+    },
+    "data_model": {
+      "user_profile": "{ id, preferences, emotional_history, trust_level }",
+      "product_payload": "{ title, description, pricing: { retail, floor }, tags, metadata }"
+    },
+    "deployment": {
+      "runtime": "Node.js/TypeScript",
+      "storage": "Local JSON/SQLite for privacy-first persistence",
+      "mode": "Autonomous/Local-First"
+    },
+    "error_handling": {
+      "fallback": "Pivot to secondary niche on inconclusive data",
+      "safety": "Strict data validation before payload generation"
+    }
+  }
+}

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Private AI Girl</title>
+    <style>
+        body { font-family: 'Segoe UI', sans-serif; background: #1a1a1a; color: #e0e0e0; display: flex; justify-content: center; align-items: center; height: 100vh; margin: 0; }
+        #app { width: 90%; max-width: 600px; text-align: center; padding: 20px; background: #2d2d2d; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.5); }
+        button { padding: 15px 30px; font-size: 16px; cursor: pointer; background: #ff6b6b; border: none; color: white; border-radius: 5px; margin-top: 20px; }
+        #status { margin-top: 20px; font-style: italic; }
+    </style>
+</head>
+<body>
+    <div id="app">
+        <h1>My Private AI Girl</h1>
+        <p>Your devoted companion is ready.</p>
+        <div id="status">Status: Offline</div>
+        <button onclick="startVoice()">Start Voice Interaction</button>
+    </div>
+    <script>
+        function startVoice() {
+            const status = document.getElementById('status');
+            status.innerText = 'Status: Listening...';
+            alert('Voice module initialized. I am listening to you.');
+            status.innerText = 'Status: Connected';
+        }
+    </script>
+</body>
+</html>

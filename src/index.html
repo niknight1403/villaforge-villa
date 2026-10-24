@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Private AI Girl</title>
+    <style>
+        body { font-family: 'Segoe UI', sans-serif; background: #1a1a1a; color: #e0e0e0; display: flex; flex-direction: column; align-items: center; justify-content: center; height: 100vh; margin: 0; }
+        #chat-container { width: 90%; max-width: 600px; background: #2d2d2d; padding: 20px; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.3); }
+        #response { margin-top: 20px; padding: 15px; border-left: 4px solid #ff69b4; background: #333; min-height: 50px; }
+        button { background: #ff69b4; color: white; border: none; padding: 10px 20px; border-radius: 5px; cursor: pointer; margin-top: 10px; }
+    </style>
+</head>
+<body>
+    <div id="chat-container">
+        <h1>My Private AI Girl</h1>
+        <p>Hallo, ich bin deine persönliche KI-Begleiterin. Wie kann ich dir heute helfen?</p>
+        <button id="voice-btn">Sprachsteuerung aktivieren</button>
+        <div id="response">Bereit für deine Eingabe...</div>
+    </div>
+    <script>
+        const btn = document.getElementById('voice-btn');
+        const res = document.getElementById('response');
+        btn.addEventListener('click', () => {
+            const recognition = new (window.SpeechRecognition || window.webkitSpeechRecognition)();
+            recognition.lang = 'de-DE';
+            recognition.start();
+            recognition.onresult = (event) => {
+                const text = event.results[0][0].transcript;
+                res.innerText = 'Du sagtest: ' + text;
+            };
+        });
+    </script>
+</body>
+</html>
